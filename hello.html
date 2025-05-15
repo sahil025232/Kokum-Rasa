@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kokum Rasa - A refreshing natural drink made from kokum fruit" />
+  <title>Kokum Rasa - Natural Kokum Drink</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #800020;
+      --secondary-color: #600018;
+      --highlight-color: #ffccd5;
+      --bg-color: #fff0f0;
+      --text-color: #333;
+    }
+    
+    body { 
+      font-family: 'Poppins', Arial, sans-serif; 
+      margin: 0; 
+      background: var(--bg-color); 
+      line-height: 1.6;
+      color: var(--text-color);
+    }
+    
+    header { 
+      background-color: var(--primary-color); 
+      color: white; 
+      padding: 1rem; 
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .logo-img {
+      height: 80px;
+      width: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid white;
+    }
+    
+    footer { 
+      background-color: var(--primary-color); 
+      color: white; 
+      padding: 1.5rem; 
+      text-align: center;
+    }
+    
+    nav { 
+      padding: 0.8rem 0;
+      background-color: var(--secondary-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    nav a { 
+      margin: 0 15px; 
+      color: white; 
+      text-decoration: none; 
+      font-weight: bold;
+      transition: all 0.3s;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    
+    nav a:hover, nav a:focus {
+      color: var(--highlight-color);
+      background-color: rgba(255,255,255,0.1);
+    }
+    
+    .container { 
+      padding: 25px; 
+      max-width: 900px; 
+      margin: 20px auto; 
+      background: white;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    
+    img.product-img { 
+      max-width: 300px; 
+      height: auto; 
+      border-radius: 15px;
+      display: block;
+      margin: 25px auto;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    
+    img.product-img:hover {
+      transform: scale(1.03);
+    }
+    
+    form { 
+      display: flex; 
+      flex-direction: column; 
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    input, textarea, button { 
+      margin: 12px 0; 
+      padding: 12px 15px; 
+      border-radius: 8px; 
+      border: 1px solid #ddd; 
+      font-size: 16px;
+      transition: border-color 0.3s;
+    }
+    
+    input:focus, textarea:focus {
+      border-color: var(--primary-color);
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(128, 0, 32, 0.2);
+    }
+    
+    button { 
+      background-color: var(--primary-color); 
+      color: white; 
+      border: none; 
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 18px;
+      transition: all 0.3s;
+      margin-top: 20px;
+    }
+    
+    button:hover { 
+      background-color: #a3002c; 
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    .product-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin: 30px 0;
+      gap: 15px;
+    }
+    
+    .highlight {
+      text-align: center;
+      padding: 20px 15px;
+      flex: 1;
+      min-width: 160px;
+      background: #ffe6e6;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+    
+    .highlight:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .highlight h3 {
+      margin-top: 0;
+      font-size: 1.3rem;
+    }
+    
+    ul.benefits-list {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    ul.benefits-list li {
+      padding: 10px 0;
+      padding-left: 35px;
+      position: relative;
+    }
+    
+    ul.benefits-list li:before {
+      content: "✓";
+      color: var(--primary-color);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+    
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 15px 0;
+    }
+    
+    .social-icons a {
+      color: white;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+    
+    .social-icons a:hover {
+      color: var(--highlight-color);
+    }
+    
+    @media (max-width: 768px) {
+      nav {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+      
+      nav a {
+        margin: 5px;
+        font-size: 0.9rem;
+      }
+      
+      .logo-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .highlight {
+        min-width: 120px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .container {
+        padding: 15px;
+      }
+      
+      img.product-img {
+        max-width: 200px;
+      }
+      
+      .product-highlights {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="kokum.png" alt="Kokum Rasa Logo" class="logo-img" />
+      <div>
+        <h1 style="margin: 0; font-size: 2rem;">Kokum Rasa</h1>
+        <p style="margin: 0; font-size: 1.1rem;">Nature's Refreshing Elixir</p>
+      </div>
+    </div>
+  </header>
+  
+  <nav>
+    <a href="#home"><i class="fas fa-home"></i> Home</a>
+    <a href="#product"><i class="fas fa-wine-bottle"></i> Product</a>
+    <a href="#benefits"><i class="fas fa-heart"></i> Benefits</a>
+    <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+    <a href="#order"><i class="fas fa-shopping-cart"></i> Order</a>
+  </nav>
+
+  <div class="container" id="home">
+    <h2>Welcome to Kokum Rasa</h2>
+    <p>Experience the authentic taste of Western India with our traditional kokum drink. Kokum Rasa is a perfect blend of tangy and sweet flavors that refreshes and revitalizes. Our drink is crafted using generations-old recipes with the finest kokum fruits sourced directly from Konkan farmers.</p>
+    <img src="Ras.png" class="product-img" alt="Kokum Rasa Bottle">
+    <p style="text-align: center;"><em>"A sip of tradition in every bottle"</em></p>
+  </div>
+
+  <div class="container" id="product">
+    <h2>Our Premium Product</h2>
+    <p><strong>Name:</strong> Kokum Rasa</p>
+    <p><strong>Price:</strong> ₹10 per bottle (200ml)</p>
+    <p><strong>Description:</strong> Kokum Rasa is a traditional herbal drink made from kokum fruit (Garcinia indica), organic jaggery, and a special blend of spices. It's naturally caffeine-free, vegan-friendly, and packed with antioxidants. Perfect for all age groups!</p>
+    
+    <div class="product-highlights">
+      <div class="highlight">
+        <h3><i class="fas fa-leaf"></i> Natural</h3>
+        <p>100% natural ingredients with no artificial preservatives</p>
+      </div>
+      <div class="highlight">
+        <h3><i class="fas fa-umbrella-beach"></i> Refreshing</h3>
+        <p>Perfect summer cooler that beats the heat naturally</p>
+      </div>
+      <div class="highlight">
+        <h3><i class="fas fa-heartbeat"></i> Healthy</h3>
+        <p>Rich in antioxidants and digestive properties</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="benefits">
+    <h2>Health Benefits</h2>
+    <ul class="benefits-list">
+      <li><strong>Digestive Aid:</strong> Helps in digestion and prevents acidity</li>
+      <li><strong>Natural Coolant:</strong> Regulates body temperature in summer</li>
+      <li><strong>Nutrient Rich:</strong> Excellent source of vitamin C and antioxidants</li>
+      <li><strong>Weight Management:</strong> Helps manage weight and cholesterol levels</li>
+      <li><strong>Immunity Booster:</strong> Strengthens immune system naturally</li>
+      <li><strong>Skin Health:</strong> Improves skin texture and prevents acne</li>
+    </ul>
+  </div>
+
+  <div class="container" id="about">
+    <h2>Our Story</h2>
+    <p>Kokum Rasa is a family-owned business founded in 2015 with a mission to bring traditional Indian beverages to modern consumers. Our recipe has been perfected over three generations, preserving the authentic taste of kokum while ensuring the highest quality standards.</p>
+    <p>We work directly with farmers in the Konkan region of Maharashtra, supporting sustainable agriculture and fair trade practices. Each bottle of Kokum Rasa represents our commitment to quality, tradition, and community.</p>
+    <p style="text-align: center; font-style: italic; margin-top: 20px;">
+      "From our family to yours - the taste of authentic India"
+    </p>
+  </div>
+
+  <div class="container" id="order">
+    <h2>Place Your Order</h2>
+    <p style="text-align: center;">Minimum order: 10 bottles. Free delivery for orders above 50 bottles in Pune.</p>
+    <p style="text-align: center; color: var(--primary-color); font-weight: bold;">Special Offer: Get 5% discount on orders above 100 bottles!</p>
+    
+    <form onsubmit="handleSubmit(event)">
+      <input type="text" placeholder="Your Name" id="name" required />
+      <input type="email" placeholder="Your Email" id="email" required />
+      <input type="tel" placeholder="Your WhatsApp Number" id="whatsapp" required />
+      <textarea placeholder="Your Full Delivery Address with PIN Code" id="address" rows="4" required></textarea>
+      <input type="number" placeholder="Quantity (bottles)" id="quantity" min="10" required />
+      <button type="submit">
+        <i class="fas fa-paper-plane"></i> Submit Order
+      </button>
+    </form>
+  </div>
+
+  <footer>
+    <div class="social-icons">
+      <a href="https://instagram.com/kokumrasa" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com/kokumrasa" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://wa.me/919999999999" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p>Contact us: <a href="mailto:kokumrasa@gmail.com" style="color: white;">kokumrasa@gmail.com</a> | Phone: +91 XXXXX XXXXX</p>
+    <p>Available for wholesale orders and special events</p>
+    <p>&copy; 2015-<script>document.write(new Date().getFullYear())</script> Kokum Rasa. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('whatsapp').value;
+      const address = document.getElementById('address').value;
+      const quantity = document.getElementById('quantity').value;
+
+      // Calculate total price
+      const price = 10;
+      let total = price * quantity;
+      let discount = 0;
+      
+      // Apply 5% discount for orders above 100 bottles
+      if (quantity > 100) {
+        discount = total * 0.05;
+        total = total - discount;
+      }
+      
+      const message = `New Kokum Rasa Order!%0A%0A*Customer Details*%0A👤 Name: ${name}%0A📧 Email: ${email}%0A📱 WhatsApp: ${phone}%0A%0A*Delivery Address*%0A🏠 ${address.replace(/\n/g, '%0A')}%0A%0A*Order Details*%0A${quantity} bottles × ₹${price} = ₹${price * quantity}%0A${discount > 0 ? `🎉 Discount (5%): -₹${discount}%0A` : ''}%0A*Total Amount: ₹${total}*%0A%0AThank you for your order! We'll contact you shortly to confirm delivery details.`;
+      
+      // Replace with your WhatsApp number (with country code but without + sign)
+      const whatsappNumber = '918975742595'; 
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+      
+      // Clear form after submission
+      e.target.reset();
+      
+      // Open WhatsApp in new tab
+      window.open(whatsappURL, '_blank');
+      
+      // Show confirmation to user
+      alert(`Thank you, ${name}! Your order for ${quantity} bottles (Total: ₹${total}) has been received. We'll contact you shortly on WhatsApp to confirm your order.`);
+    }
+  </script>
+</body>
+</html>
